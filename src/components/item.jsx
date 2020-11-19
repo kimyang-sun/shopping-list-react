@@ -16,15 +16,16 @@ export default class Item extends Component {
   };
 
   render() {
+    const { name, count } = this.props.item;
     return (
-      <li className="list-item">
-        <div className="list-information">
-          <span className="list-name">Menu Item</span>
-          <span className="list-count">
-            수량 <span className="count">{this.state.count}</span>
+      <li className="item">
+        <div className="item-information">
+          <span className="item-name">{name}</span>
+          <span className="item-count">
+            수량 <span className="count">{count}</span>
           </span>
         </div>
-        <div className="list-btns">
+        <div className="item-btns">
           <button className="plus-btn" onClick={this.handleIncrement}>
             <i className="fas fa-plus-square"></i>
           </button>
