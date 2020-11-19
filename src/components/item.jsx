@@ -1,18 +1,16 @@
 import React, { Component } from "react";
 
 export default class Item extends Component {
-  state = {
-    count: 0,
-  };
-
   handleIncrement = () => {
-    // state 오브젝트 안에 있는 count를 증가한 뒤, state를 업데이트 해야함.
-    this.setState({ count: this.state.count + 1 });
+    this.props.onIncrement(this.props.item);
   };
 
   handleDecrement = () => {
-    const count = this.state.count - 1;
-    this.setState({ count: count < 0 ? 0 : count });
+    this.props.onDecrement(this.props.item);
+  };
+
+  handleDelete = () => {
+    this.props.onDelete(this.props.item);
   };
 
   render() {
@@ -32,7 +30,7 @@ export default class Item extends Component {
           <button className="minus-btn" onClick={this.handleDecrement}>
             <i className="fas fa-minus-square"></i>
           </button>
-          <button className="trash-btn">
+          <button className="trash-btn" onClick={this.handleDelete}>
             <i className="fas fa-trash-alt"></i>
           </button>
         </div>
