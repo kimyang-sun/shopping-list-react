@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+/* Font*/
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap");
+
+/* Library */
+html,
+body {
+  font-family: "Nanum Gothic", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body,
+h1,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul,
+ol,
+li {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom */
+:root {
+  --main-color: cornflowerblue;
+  --border-radius: 6px;
+}
+
+body {
+  background-color: #000;
+}
+
+#root {
+  background-color: #fff;
+  max-width: 520px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.list-item {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  padding: 12px 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.list-information {
+  font-weight: bold;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-information .list-name {
+  font-size: 1.25rem;
+  color: #555;
+}
+
+.list-information .list-count {
+  font-size: 1rem;
+  padding-left: 15px;
+  display: flex;
+  align-items: flex-end;
+  color: #777;
+}
+
+.list-information .list-count .count {
+  display: inline-block;
+  font-size: 1.25rem;
+  color: var(--main-color);
+  padding-left: 6px;
+  font-weight: 700;
+}
+
+.list-btns button {
+  font-size: 1.75rem;
+}
+
+.list-btns button:active {
+  opacity: 0.8;
+}
+
+.list-btns .plus-btn,
+.list-btns .minus-btn {
+  color: var(--main-color);
+}
+
+.list-btns .trash-btn {
+  color: darkred;
 }
