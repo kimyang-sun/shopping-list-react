@@ -1,10 +1,10 @@
 /* Font*/
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
 
 /* Library */
 html,
 body {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 html,
@@ -49,7 +49,64 @@ body {
   max-width: 520px;
   height: 100vh;
   margin: 0 auto;
-  padding: 20px;
+}
+
+/* Navbar */
+header {
+  margin-bottom: 20px;
+}
+
+.navbar-text {
+  text-align: center;
+  font-size: 1.25rem;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 15px 0;
+}
+
+.navbar-text > svg {
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.navbar-text .count {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: var(--main-color);
+  margin-left: 15px;
+}
+
+/* Add Input */
+.add-form {
+  padding: 0 15px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.add-form .add-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 5px;
+}
+
+.add-form .add-btn {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background-color: var(--main-color);
+  height: 100%;
+  color: #fff;
+  padding: 0 12px;
+}
+
+/* item */
+.items {
+  padding: 0 15px;
 }
 
 .item {
@@ -71,12 +128,12 @@ body {
 }
 
 .item-information .item-name {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #555;
 }
 
 .item-information .item-count {
-  font-size: 1rem;
+  font-size: 0.875rem;
   padding-left: 15px;
   display: flex;
   align-items: flex-end;
@@ -85,14 +142,14 @@ body {
 
 .item-information .item-count .count {
   display: inline-block;
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: var(--main-color);
   padding-left: 6px;
   font-weight: 700;
 }
 
 .item-btns button {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 
 .item-btns button:active {
