@@ -107,6 +107,8 @@ header {
 /* item */
 .items {
   padding: 0 15px;
+  height: calc(100% - 182px);
+  overflow-y: auto;
 }
 
 .item {
@@ -163,4 +165,13 @@ header {
 
 .item-btns .trash-btn {
   color: darkred;
+}
+
+/* reset btn */
+.reset-btn {
+  display: block;
+  margin: 0 15px 10px auto;
+  padding: 5px 8px;
+  background-color: darkred;
+  color: #fff;
 }

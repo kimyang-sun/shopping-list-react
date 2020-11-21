@@ -7,9 +7,9 @@ import Items from "./components/items";
 class App extends Component {
   state = {
     items: [
-      { id: 1, name: "item 1", count: 0 },
-      { id: 2, name: "item 2", count: 0 },
-      { id: 3, name: "item 3", count: 0 },
+      { id: 1, name: "로션", count: 1 },
+      { id: 2, name: "핸드크림", count: 1 },
+      { id: 3, name: "선크림", count: 1 },
     ],
   };
 
@@ -38,9 +38,17 @@ class App extends Component {
   handleAdd = name => {
     const items = [
       ...this.state.items,
-      { id: Date.now(), name: name, count: 0 },
+      { id: Date.now(), name: name, count: 1 },
     ];
     this.setState({ items });
+  };
+
+  handleReset = () => {
+    if (window.confirm("상품들을 전부 삭제하시겠습니까?")) {
+      let items = this.state.items;
+      items = [];
+      this.setState({ items });
+    }
   };
 
   render() {
@@ -55,6 +63,7 @@ class App extends Component {
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement}
           onDelete={this.handleDelete}
+          onReset={this.handleReset}
         ></Items>
       </React.Fragment>
     );
