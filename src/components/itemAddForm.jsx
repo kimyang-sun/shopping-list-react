@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-export default class ItemAddForm extends Component {
+export default class ItemAddForm extends PureComponent {
   inputRef = React.createRef();
   onSubmit = event => {
     event.preventDefault();

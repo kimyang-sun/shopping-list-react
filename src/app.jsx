@@ -14,17 +14,22 @@ class App extends Component {
   };
 
   handleIncrement = item => {
-    const items = [...this.state.items];
-    const index = items.indexOf(item);
-    items[index].count++;
+    const items = this.state.items.map(_item => {
+      if (item.id === _item.id) {
+        return { ...item, count: item.count + 1 };
+      }
+      return _item;
+    });
     this.setState({ items });
   };
 
   handleDecrement = item => {
-    const items = [...this.state.items];
-    const index = items.indexOf(item);
-    const count = items[index].count - 1;
-    items[index].count = count < 0 ? 0 : count;
+    const items = this.state.items.map(_item => {
+      if (item.id === _item.id && item.count > 0) {
+        return { ...item, count: item.count - 1 };
+      }
+      return _item;
+    });
     this.setState({ items });
   };
 
