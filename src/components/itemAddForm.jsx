@@ -1,24 +1,24 @@
-import React, { PureComponent } from "react";
+import React, { memo } from "react";
 
-export default class ItemAddForm extends PureComponent {
-  inputRef = React.createRef();
-  onSubmit = event => {
+const ItemAddForm = memo(props => {
+  const inputRef = React.createRef();
+  const onSubmit = event => {
     event.preventDefault();
-    const name = this.inputRef.current.value;
-    name ? this.props.onAdd(name) : alert("상품을 입력해주세요.");
-    this.inputRef.current.value = "";
+    const name = inputRef.current.value;
+    name ? props.onAdd(name) : alert("상품을 입력해주세요.");
+    inputRef.current.value = "";
   };
-  render() {
-    return (
-      <form className="add-form" onSubmit={this.onSubmit}>
-        <input
-          ref={this.inputRef}
-          type="text"
-          className="add-input"
-          placeholder="추가할 상품을 입력하세요."
-        />
-        <button className="add-btn">추가</button>
-      </form>
-    );
-  }
-}
+  return (
+    <form className="add-form" onSubmit={onSubmit}>
+      <input
+        ref={inputRef}
+        type="text"
+        className="add-input"
+        placeholder="추가할 상품을 입력하세요."
+      />
+      <button className="add-btn">추가</button>
+    </form>
+  );
+});
+
+export default ItemAddForm;
