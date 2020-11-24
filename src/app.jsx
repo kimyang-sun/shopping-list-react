@@ -10,6 +10,7 @@ class App extends Component {
       { id: 1, name: "로션", count: 1 },
       { id: 2, name: "핸드크림", count: 1 },
       { id: 3, name: "선크림", count: 1 },
+      { id: 4, name: "립밤", count: 1 },
     ],
   };
 
